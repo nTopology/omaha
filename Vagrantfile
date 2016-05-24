@@ -46,10 +46,10 @@ Vagrant.configure(2) do |config|
 
     # Copy the contents into the virtualbox via rsync for faster build times
     # Refresh rsync folder while the box is still running with `vagrant rsync reload`
-    host.vm.synced_folder "../omaha", "/omaha_rsync",
-      type: "rsync",
-      rsync__exclude: ".git/",
-      rsync__auto: true
+    # host.vm.synced_folder "../omaha", "/omaha_rsync",
+    #   type: "rsync",
+    #   rsync__exclude: ".git/",
+    #   rsync__auto: true
   end
 
   # Provider-specific configuration so you can fine-tune various
@@ -67,6 +67,13 @@ Vagrant.configure(2) do |config|
     # Customize the amount of memory on the VM:
     # Find total memory on the host machine and give 1/4 access
     host_mem_total = (`systeminfo |find "Total Physical Memory"`).to_i
+    puts "Total host mem is #{host_mem_total}" unless host_mem_total = 0
+
+    if host_mem_total = 0
+      puts "Host mem is 0! Using defaul 8GB"
+      host_mem_total = 8192
+    end
+
     mem = host_mem_total.to_i/4
     puts "Using #{host_mem_total/4} memory"
     # Use half the cores available for building
