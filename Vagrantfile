@@ -62,17 +62,20 @@ Vagrant.configure(2) do |config|
     vb.gui = true
 
     host = RbConfig::CONFIG['host_os']
-    puts host
+    return unless host.eql?('mingw32')
 
     # Customize the amount of memory on the VM:
     # Find total memory on the host machine and give 1/4 access
     host_mem_total = (`systeminfo |find "Total Physical Memory"`).to_i
-    vb.memory = host_mem_total.to_i/4
+    mem = host_mem_total.to_i/4
     puts "Using #{host_mem_total/4} memory"
     # Use half the cores available for building
     host_cpu_cores = (ENV['NUMBER_OF_PROCESSORS']).to_i
-    vb.cpus = host_cpu_cores.to_i/2
+    cpus = host_cpu_cores.to_i/2
     puts "Using #{host_cpu_cores/2} cores"
+
+    vb.customize ["modifyvm", :id, "--memory", mem]
+    vb.customize ["modifyvm", :id, "--cpus", cpus]
   end
 
   # View the documentation for the provider you are using for more
@@ -88,8 +91,7 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   sudo apt-get update
-  #   sudo apt-get install -y apache2
-  # SHELL
+  config.vm.provision "shell", inline: <<-SHELL
+    hammer
+  SHELL
 end
