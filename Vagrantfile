@@ -14,6 +14,14 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.define "host" do |host|
     config.vm.box = "Microsoft/EdgeOnWindows10"
+    # config.vm.box_url = "s3_url_here"
+    config.vm.guest = :windows
+    config.vm.communicator = "winrm"
+    config.winrm.username = "vagrant"
+    config.winrm.password = "vagrant"
+    config.vm.boot_timeout = 600
+    config.vm.network :forwarded_port, guest: 3389, host: 3389
+    config.vm.network :forwarded_port, guest: 5985, host: 5985, id: "winrm", auto_correct: true
   end
 
   # Disable automatic box update checking. If you disable this, then
@@ -42,14 +50,14 @@ Vagrant.configure(2) do |config|
   config.vm.define "host" do |host|
 
     # Share Omaha directory with the virtualbox
-    host.vm.synced_folder "../omaha", "/omaha", type: "virtualbox"
+    host.vm.synced_folder "../omaha", "C:/omaha", type: "virtualbox"
 
     # Copy the contents into the virtualbox via rsync for faster build times
     # Refresh rsync folder while the box is still running with `vagrant rsync reload`
-    # host.vm.synced_folder "../omaha", "/omaha_rsync",
-    #   type: "rsync",
-    #   rsync__exclude: ".git/",
-    #   rsync__auto: true
+    host.vm.synced_folder "../omaha", "C:/omaha_smb",
+      type: "smb",
+      smb_username: "vagrant",
+      smb_password: "vagrant"
   end
 
   # Provider-specific configuration so you can fine-tune various
