@@ -24,7 +24,7 @@ TCHAR kHKRootService[] = _T("HKLM");
 TCHAR kProgIDUpdate3COMClassServiceLocal[] = kProgIDUpdate3COMClassService;
 
 // A private object map with custom registration works best, even though this
-// stuff is deprecated. This is because GoogleUpdate.exe has other objects
+// stuff is deprecated. This is because ElementUpdate.exe has other objects
 // defined elsewhere and we do not want to expose those from the service.
 BEGIN_OBJECT_MAP(object_map_google_update3)
   OBJECT_ENTRY(__uuidof(GoogleUpdate3ServiceClass), Update3COMClassService)

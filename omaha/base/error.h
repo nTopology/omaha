@@ -435,7 +435,7 @@ const ULONG kFacilityOmaha = 67;
 #define GOOPDATEUTILS_E_BROWSERTYPE                 \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0xA00)
 
-// GoogleUpdate.exe shell custom error codes.
+// ElementUpdate.exe shell custom error codes.
 #define GOOGLEUPDATE_E_DLL_NOT_FOUND           \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0xB00)
 #define GOOGLEUPDATE_E_VERIFY_SIGNEE_IS_GOOGLE_FAILED \

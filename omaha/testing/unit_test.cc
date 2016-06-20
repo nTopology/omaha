@@ -224,7 +224,7 @@ void TerminateAllGoogleUpdateProcesses() {
 
 // The exit code of psexec is the pid it started when -d is used.
 // Wait for psexec to exit, get the exit code, and use it to get a handle
-// to the GoogleUpdate.exe instance.
+// to the ElementUpdate.exe instance.
 void LaunchProcessAsSystem(const CString& launch_cmd, HANDLE* process) {
   ASSERT_TRUE(process);
 

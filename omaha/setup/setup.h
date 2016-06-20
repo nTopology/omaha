@@ -96,7 +96,7 @@ class Setup {
   // Tells other instances to stop.
   HRESULT StopGoogleUpdate();
 
-  // Returns how long to wait before terminating GoogleUpdate.exe forcefully.
+  // Returns how long to wait before terminating ElementUpdate.exe forcefully.
   int GetForceKillWaitTimeMs() const;
 
   // Tells other instances to stop then waits for them to exit.
@@ -109,14 +109,14 @@ class Setup {
   // Releases all the shutdown events.
   void ReleaseShutdownEvents();
 
-  // Waits for other instances of GoogleUpdate.exe to exit.
+  // Waits for other instances of ElementUpdate.exe to exit.
   HRESULT WaitForOtherInstancesToExit(const Pids& pids,
                                       int wait_time_before_kill_ms);
 
-  // Gets the list of all the GoogleUpdate.exe processes to wait for.
+  // Gets the list of all the ElementUpdate.exe processes to wait for.
   HRESULT GetPidsToWaitFor(Pids* pids) const;
 
-  // Gets a list of GoogleUpdate.exe processes for user or machine that are
+  // Gets a list of ElementUpdate.exe processes for user or machine that are
   // running from the respective official directory, except "/install" or
   // "/registerproduct" instances.
   // In the machine case we search in all the accounts since the workers can be

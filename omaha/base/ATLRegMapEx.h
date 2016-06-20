@@ -211,8 +211,8 @@ struct _ATL_REGMAP_ENTRYKeeper : public _ATL_REGMAP_ENTRY {
 
 // Add in an entry with key x, and value being the currently running EXE's
 // module path. For example, REGMAP_EXE_MODULE("foo"), with the current process
-// being googleupdate.exe will result in the entry:
-// "foo", "{blah}\\Google\\Update\\googleupdate.exe"
+// being ElementUpdate.exe will result in the entry:
+// "foo", "{blah}\\Google\\Update\\ElementUpdate.exe"
 #define REGMAP_EXE_MODULE(x) _ATL_REGMAP_ENTRYKeeper((x), true),
 
 #define END_REGISTRY_MAP() _ATL_REGMAP_ENTRYKeeper()                        \
@@ -252,4 +252,3 @@ struct _ATL_REGMAP_ENTRYKeeper : public _ATL_REGMAP_ENTRY {
 }  // namespace omaha
 
 #endif  // OMAHA_BASE_ATLREGMAPEX_H__
-

@@ -81,7 +81,7 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE previous_instance,
 
   // TODO(omaha): Use the registry to get the path of the constant shell.
   // Remove filename and move up one directory, because we want to use the
-  // constant shell GoogleUpdate.exe.
+  // constant shell ElementUpdate.exe.
   ::PathRemoveFileSpec(command_line);
 #if OFFICIAL_BUILD
   ::PathRemoveFileSpec(command_line);

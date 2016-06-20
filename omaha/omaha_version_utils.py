@@ -121,10 +121,10 @@ def _GetMetainstallerPayloadFilenames(prefix,
   # TODO(omaha): Move the other filename defines in main.scons into this file
   # and allow all filenames to be customized.  At the moment, while the plugin
   # names are generated in one place due to version numbers, most of the other
-  # files (googleupdate.exe, goopdateres_*.dll, etc.) are hardcoded all over
+  # files (ElementUpdate.exe, goopdateres_*.dll, etc.) are hardcoded all over
   # the place, and require a ton of point fixes to customize.
   payload_files = [
-      'GoogleUpdate.exe',
+      'ElementUpdate.exe',
       '%s.exe' % _CRASH_HANDLER_NAME,
       '%sgoopdate.dll' % (prefix),
       plugin_dll_name,

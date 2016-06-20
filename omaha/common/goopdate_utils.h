@@ -58,7 +58,7 @@ typedef HRESULT (*RegisterOrUnregisterFunction)(void* data, bool is_register);
 CString BuildGoogleUpdateExeDir(bool is_machine);
 
 // Builds the path of the Google Update version found in the registry. The
-// command line is of the form "<install location>\googleupdate.exe"
+// command line is of the form "<install location>\ElementUpdate.exe"
 CString BuildGoogleUpdateExePath(bool is_machine);
 
 // Builds the path of the crash handler. The command line is of the form
@@ -80,8 +80,8 @@ bool IsRunningFromDir(int csidl);
 // If running the installed machine instance, returns HKLM. Else returns HKCU.
 CString GetHKRoot();
 
-// Returns the version of GoogleUpdate.exe that is installed in the official
-// location. Returns an empty CString if GoogleUpdate.exe is missing.
+// Returns the version of ElementUpdate.exe that is installed in the official
+// location. Returns an empty CString if ElementUpdate.exe is missing.
 CString GetInstalledShellVersion(bool is_machine);
 
 // Starts an instance of the Google Update version found in the registry.

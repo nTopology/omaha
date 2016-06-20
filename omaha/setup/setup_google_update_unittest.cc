@@ -395,7 +395,7 @@ class SetupGoogleUpdateMachineRegistryProtectedInHklmTest
 TEST_F(SetupGoogleUpdateUserRegistryProtectedTest,
        FinishInstall_RunKeyDoesNotExist) {
   // The version in the real registry must be set because it is used by
-  // GoogleUpdate.exe during registrations.
+  // ElementUpdate.exe during registrations.
   RestoreRegistryHives();
   const bool had_pv = RegKey::HasValue(USER_REG_CLIENTS_GOOPDATE,
                                        kRegValueProductVersion);
@@ -465,7 +465,7 @@ TEST_F(SetupGoogleUpdateUserRegistryProtectedTest,
   }
 }
 
-// TODO(omaha): Assumes GoogleUpdate.exe exists in the installed location, which
+// TODO(omaha): Assumes ElementUpdate.exe exists in the installed location, which
 // is not always true when run independently.
 TEST_F(SetupGoogleUpdateUserRegistryProtectedTest, InstallRegistryValues) {
   if (IsTestRunByLocalSystem()) {
@@ -537,7 +537,7 @@ TEST_F(SetupGoogleUpdateUserRegistryProtectedTest, InstallRegistryValues) {
   EXPECT_STREQ(GetVersionString(), product_version);
 }
 
-// TODO(omaha): Assumes GoogleUpdate.exe exists in the installed location, which
+// TODO(omaha): Assumes ElementUpdate.exe exists in the installed location, which
 // is not always true when run independently.
 // TODO(omaha): Fails when run by itself on Windows Vista.
 TEST_F(SetupGoogleUpdateMachineRegistryProtectedInHklmTest,
@@ -580,7 +580,7 @@ TEST_F(SetupGoogleUpdateMachineRegistryProtectedInHklmTest,
   EXPECT_SUCCEEDED(GetFolderPath(CSIDL_PROGRAM_FILES, &expected_shell_path));
   expected_shell_path.Append(_T("\\") SHORT_COMPANY_NAME
                              _T("\\") PRODUCT_NAME
-                             _T("\\GoogleUpdate.exe"));
+                             _T("\\ElementUpdate.exe"));
   CString shell_path;
   EXPECT_SUCCEEDED(
       RegKey::GetValue(MACHINE_REG_UPDATE, _T("path"), &shell_path));

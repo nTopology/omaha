@@ -59,7 +59,7 @@ HRESULT VerifyCOMLocalServerRegistration(bool is_machine) {
 #if 0
   // Validate the following:
   // * LocalServer32 under CLSID_OnDemandMachineAppsClass or
-  //   CLSID_OnDemandUserAppsClass should be ...Google\Update\GoogleUpdate.exe.
+  //   CLSID_OnDemandUserAppsClass should be ...Google\Update\ElementUpdate.exe.
   // * InProcServer32 under CLSID of IID_IGoogleUpdate should be
   //   ...Google\Update\{version}\goopdate.dll.
   // * ProxyStubClsid32 under IGoogleUpdate interface should be the CLSID of the
@@ -317,7 +317,7 @@ HRESULT SetupGoogleUpdate::InstallRegistryValues() {
 
   // Set the version so the constant shell will know which version to use.
   // TODO(omaha3): This should be the atomic switch of the version, but it must
-  // be called before registering the COM servers because GoogleUpdate.exe needs
+  // be called before registering the COM servers because ElementUpdate.exe needs
   // the pv to find goopdate.dll. We may need to support rolling this back.
   hr = RegKey::SetValue(omaha_clients_key_path,
                         kRegValueProductVersion,

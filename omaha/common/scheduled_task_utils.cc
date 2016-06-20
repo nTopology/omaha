@@ -726,7 +726,7 @@ CString GetOmaha1LegacyTaskName(bool is_machine) {
 }
 
 // Returns the task name Omaha used to install in Omaha 2 before the
-// "GoogleUpdate.exe does not run all the time" refactoring.
+// "ElementUpdate.exe does not run all the time" refactoring.
 CString GetOmaha2LegacyTaskName(bool is_machine) {
   const TCHAR* kLegacyOmaha2TaskNameUserPrefix = _T("GoogleUpdateTaskUser");
   const TCHAR* kLegacyOmaha2TaskNameMachine = _T("GoogleUpdateTaskMachine");

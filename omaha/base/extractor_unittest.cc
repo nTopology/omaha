@@ -15,7 +15,7 @@
 //
 // Unit test for the extractor and the ApplyTag class.
 //
-// TODO(omaha): eliminate the dependency on the hardcoded "GoogleUpdate.exe"
+// TODO(omaha): eliminate the dependency on the hardcoded "ElementUpdate.exe"
 // program name.
 
 #include <shlobj.h>

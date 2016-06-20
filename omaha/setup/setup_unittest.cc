@@ -114,7 +114,7 @@ class SetupTest : public testing::Test {
  protected:
   typedef std::vector<uint32> Pids;
 
-  // Returns the path to the long-running GoogleUpdate.exe.
+  // Returns the path to the long-running ElementUpdate.exe.
   static CString CopyGoopdateAndLongRunningFiles(const CString& omaha_path,
                                                  const CString& version) {
     CopyGoopdateFiles(omaha_path, version);
@@ -153,7 +153,7 @@ class SetupTest : public testing::Test {
         not_listening_exe_opposite_path_(!is_machine ?
                                          not_listening_machine_exe_path_ :
                                          not_listening_user_exe_path_) {
-    omaha_exe_path_ = ConcatenatePath(omaha_path_, _T("GoogleUpdate.exe"));
+    omaha_exe_path_ = ConcatenatePath(omaha_path_, _T("ElementUpdate.exe"));
   }
 
   virtual void SetUp() {
@@ -457,7 +457,7 @@ class SetupTest : public testing::Test {
                                                      0));
   }
 
-  // Launches an instance of GoogleUpdate.exe that doesn't exit.
+  // Launches an instance of ElementUpdate.exe that doesn't exit.
   void StopGoogleUpdateAndWaitProcessesDoNotStopTest() {
     LaunchProcessAndExpectStopGoogleUpdateAndWaitKillsProcess(
         is_machine_,

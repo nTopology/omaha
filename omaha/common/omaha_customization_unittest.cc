@@ -122,7 +122,7 @@ TEST(OmahaCustomizationTest, Constants_Names) {
 }
 
 TEST(OmahaCustomizationTest, Constants_Filenames) {
-  EXPECT_STREQ(_T("GoogleUpdate.exe"), kOmahaShellFileName);
+  EXPECT_STREQ(_T("ElementUpdate.exe"), kOmahaShellFileName);
   EXPECT_STREQ(_T("GoogleCrashHandler.exe"), kCrashHandlerFileName);
   EXPECT_STREQ(_T("GoogleCrashHandler64.exe"), kCrashHandler64FileName);
   EXPECT_STREQ(_T("goopdate.dll"), kOmahaDllName);
@@ -306,7 +306,7 @@ TEST(OmahaCustomizationTest, Constants_Services) {
   EXPECT_GU_STREQ(_T("gupdate"), kServicePrefix);
   EXPECT_GU_STREQ(_T("gupdatem"), kMediumServicePrefix);
 
-  EXPECT_STREQ(_T("GoogleUpdate.exe"), kServiceFileName);
+  EXPECT_STREQ(_T("ElementUpdate.exe"), kServiceFileName);
 }
 
 TEST(OmahaCustomizationTest, Constants_ScheduledTasks) {

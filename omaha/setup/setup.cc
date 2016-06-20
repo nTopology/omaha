@@ -144,7 +144,7 @@ void IncrementProcessWaitFailCount(CommandLineMode mode) {
   }
 }
 
-// Returns the pids of all other GoogleUpdate.exe processes with the specified
+// Returns the pids of all other ElementUpdate.exe processes with the specified
 // argument string. Checks processes for all users that it has privileges to
 // access.
 HRESULT GetPidsWithArgsForAllUsers(const CString& args,
@@ -842,7 +842,7 @@ HRESULT Setup::WaitForOtherInstancesToExit(const Pids& pids,
       SETUP_LOG(LE, (_T("[::WaitForMultipleObjects failed][%u]"), error));
       hr = HRESULT_FROM_WIN32(error);
     } else if (WAIT_OBJECT_0 != res) {
-      OPT_LOG(LEVEL_ERROR, (_T("[Other GoogleUpdate.exe instances failed to ")
+      OPT_LOG(LEVEL_ERROR, (_T("[Other ElementUpdate.exe instances failed to ")
                             _T("shutdown in time][%u]"), res));
 
       extra_code1_ = COMMANDLINE_MODE_UNKNOWN;

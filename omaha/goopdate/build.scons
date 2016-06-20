@@ -49,7 +49,7 @@ def BuildCOMForwarder(cmd_line_switch,
           'shlwapi.lib',
       ],
   )
-  # The resource file used is the same as the one for GoogleUpdate.exe.
+  # The resource file used is the same as the one for ElementUpdate.exe.
   # The version resource used is the same as the one for goopdate.dll.
   com_forwarder_res = com_forwarder_env.RES('%s.res' % signed_exe_name,
                                             '../google_update/resource.rc')

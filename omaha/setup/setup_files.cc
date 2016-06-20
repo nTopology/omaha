@@ -77,7 +77,7 @@ HRESULT SetupFiles::Init() {
 // Assumes that the user already has the appropriate permissions
 // (e.g. is elevated for a machine install).
 // Assumes ShouldInstall has been called and returned true.
-// Assumes no other instances of GoogleUpdate.exe are running.
+// Assumes no other instances of ElementUpdate.exe are running.
 HRESULT SetupFiles::Install() {
   OPT_LOG(L1, (_T("[Install files]")));
   ASSERT1(vista_util::IsUserAdmin() || !is_machine_);
